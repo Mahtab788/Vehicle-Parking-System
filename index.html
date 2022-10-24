@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vehicle Parking System</title>
+</head>
+
+<body>
+    <div class="acknowledgement" id="acknowledgement">
+        <h2>Acknowledgement</h2>
+        <div class="value-container" id="containerAcw"></div>
+
+        <div class="button">
+            <button id="print" onclick="window.print()">Print</button>
+            <button id="cancel" onclick="toggleModal()">Cancel</button>
+        </div>
+    </div>
+    <div class="overlay1" id="overlay"></div>
+    <div class="overlay" id="overlay"></div>
+    <div class="wrapper" id="main">
+        <div class="chart">
+            <h3>Price Chart</h3>
+            <div class="chart-value">
+                <strong>Bike : </strong>
+                <div>25Rs</div>
+            </div>
+            <div class="chart-value">
+                <strong>Scooty : </strong>
+                <div>20Rs</div>
+            </div>
+            <div class="chart-value">
+                <strong>Car : </strong>
+                <div>50Rs</div>
+            </div>
+            <div class="chart-value">
+                <strong>Auto : </strong>
+                <div>40Rs</div>
+            </div>
+            <div class="chart-value">
+                <strong>Truck : </strong>
+                <div>70Rs</div>
+            </div>
+            <p>For 8 Hours</p>
+        </div>
+        <h1 class="heading">Vehicle Parking</h1>
+        <div class="formInput">
+            <input type="text" id="vehicleNo" oninput="disableBtn()" placeholder="AB 04 QU 7**0">
+            <input type="text" id="vehicleOwner" oninput="disableBtn()" placeholder="Enter Vehicle Owner Name">
+            <select id="vehicleType" onchange="disableBtn()">
+                <option value="Select" selected>Select</option>
+                <option value="Car">Car</option>
+                <option value="Scooty">Scooty</option>
+                <option value="Bike">Bike</option>
+                <option value="Auto">Auto</option>
+                <option value="Truck">Truck</option>
+            </select>
+            <button type="button" disabled id="addVehicleBtn" onclick="addVehicle()">Add Vehicle</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Vehicle No.</th>
+                    <th>Vehicle Owner</th>
+                    <th>Vehicle Type</th>
+                    <th>Vehicle Entry Time</th>
+                    <th>Vehicle Exit Time</th>
+                    <th>Departed</th>
+                    <th>Acknowledgement</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
